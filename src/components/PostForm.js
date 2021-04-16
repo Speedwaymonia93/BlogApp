@@ -24,33 +24,33 @@ function PostForm(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='todo-form'>
+    <form onSubmit={handleSubmit} className='posts-form'>
       {props.edit ? (
         <>
-          <input
+          <textarea style={{resize: "none"}}
             placeholder='Update your post'
             value={input}
             onChange={handleChange}
             name='text'
             ref={inputRef}
-            className='todo-input edit'
+            className='post-input edit'
           />
-          <button onClick={handleSubmit} className='todo-button edit'>
-            Update
+          <button onClick={handleSubmit} className='post-button edit'>
+            Update post
           </button>
         </>
       ) : (
         <>
-          <input
-            placeholder='Add a post'
+          <textarea style={{resize: "none"}}
+            placeholder='Just write what is in your head'
             value={input}
             onChange={handleChange}
             name='text'
-            className='todo-input'
+            className='post-input'
             ref={inputRef}
           />
-          <button onClick={handleSubmit} className='todo-button'>
-            Add todo
+          <button onClick={handleSubmit} className='post-button'>
+            Add post
           </button>
         </>
       )}

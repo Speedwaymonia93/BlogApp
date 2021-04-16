@@ -9,16 +9,16 @@
 body {
   background: linear-gradient(
     90deg,
-    rgba(48, 16, 255, 1) 0%,
-    rgba(100, 115, 255, 1) 100%
+    #ccf2ff 0%,
+    #00bfff 100%
   );
 }
-.todo-app {
+.posts-app {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 520px;
-  min-height: 600px;
+  width: 95%;
+  min-height: 900px;
   background: #161a2b;
   text-align: center;
   margin: 128px auto;
@@ -37,25 +37,26 @@ h1 {
   opacity: 0.4;
 }
 
-.todo-form {
+.posts-form {
   margin-bottom: 32px;
 }
 
-.todo-input {
+.post-input {
   padding: 14px 32px 14px 16px;
   border-radius: 4px 0 0 4px;
-  border: 2px solid #5d0cff;
+  border: 2px solid #00bfff;
   outline: none;
-  width: 320px;
+  width: 650px;
+  height: 300px;
   background: transparent;
   color: #fff;
 }
 
-.todo-input::placeholder {
+.post-input::placeholder {
   color: #e2e2e2;
 }
 
-.todo-button {
+.post-button {
   padding: 16px;
   border: none;
   border-radius: 0 4px 4px 0;
@@ -63,18 +64,20 @@ h1 {
   outline: none;
   background: linear-gradient(
     90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
+    #ccf2ff 0%,
+    #00bfff 100%
   );
-  color: #fff;
-  text-transform: capitalize;
+  text-transform: uppercase;
+  margin-left: 10px;
+  width: 100px;
+  color: black;
 }
 
-.todo-input.edit {
+.post-input.edit {
   border: 2px solid #149fff;
 }
 
-.todo-button.edit {
+.post-button.edit {
   background: linear-gradient(
     90deg,
     rgba(20, 159, 255, 1) 0%,
@@ -87,47 +90,24 @@ h1 {
   display: flex;
   flex-direction: row;
   position: relative;
+  flex-wrap: wrap;
 }
 
-.todo-row {
+.post-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 4px auto;
-  color: #fff;
+  color: black;
   background: linear-gradient(
     90deg,
-    rgba(255, 118, 20, 1) 0%,
-    rgba(255, 84, 17, 1) 100%
+    #00bfff 0%,
+    #00bfff 100%
   );
 
   padding: 16px;
   border-radius: 5px;
   width: 90%;
-}
-
-.todo-row:nth-child(4n + 1) {
-  background: linear-gradient(
-    90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
-  );
-}
-
-.todo-row:nth-child(4n + 2) {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 12, 241, 1) 0%,
-    rgba(250, 0, 135, 1) 100%
-  );
-}
-
-.todo-row:nth-child(4n + 3) {
-  background: linear-gradient(
-    90deg,
-    rgba(20, 159, 255, 1) 0%,
-    rgba(17, 122, 255, 1) 100%
-  );
 }
 
 .icons {
@@ -144,4 +124,13 @@ h1 {
 
 .edit-icon {
   color: #fff;
+}
+
+.post-style{
+  height: 300px;
+}
+
+.p-style{
+  color: white;
+  margin: 10px;
 }

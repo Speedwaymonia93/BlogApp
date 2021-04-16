@@ -3,51 +3,38 @@ import PostForm from './PostForm';
 import Main from './Main';
 
 function PostList() {
-  const [todos, setTodos] = useState([]);
+  const [posts, setPosts] = useState([]);
 
-  const addTodo = todo => {
-    if (!todo.text || /^\s*$/.test(todo.text)) {
+  const addPost = post => {
+    if (!post.text || /^\s*$/.test(post.text)) {
       return;
     }
 
-    const newTodos = [todo, ...todos];
+    const newPosts = [post, ...posts];
 
-    setTodos(newTodos);
-    console.log(...todos);
+    setPosts(newPosts);
   };
 
-  const updateTodo = (todoId, newValue) => {
+  const updateTodo = (postId, newValue) => {
     if (!newValue.text || /^\s*$/.test(newValue.text)) {
       return;
     }
 
-    setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
+    setPosts(prev => prev.map(item => (item.id === postId ? newValue : item)));
   };
 
-  const removeTodo = id => {
-    const removedArr = [...todos].filter(todo => todo.id !== id);
+  const removePost = id => {
+    const removedArr = [...posts].filter(post => post.id !== id);
 
-    setTodos(removedArr);
-  };
-
-  const completeTodo = id => {
-    let updatedTodos = todos.map(todo => {
-      if (todo.id === id) {
-        todo.isComplete = !todo.isComplete;
-      }
-      return todo;
-    });
-    setTodos(updatedTodos);
+    setPosts(removedArr);
   };
 
   return (
     <>
-      <h1>What's the Plan for Today?</h1>
-      <PostForm onSubmit={addTodo} />
+      <PostForm onSubmit={addPost} />
       <Main
-        todos={todos}
-        completeTodo={completeTodo}
-        removeTodo={removeTodo}
+        posts={posts}
+        removePost={removePost}
         updateTodo={updateTodo}
       />
     </>

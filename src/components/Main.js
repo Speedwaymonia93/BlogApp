@@ -3,7 +3,7 @@ import PostForm from './PostForm';
 import { RiCloseCircleLine } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
 
-const Main = ({ todos, completeTodo, removePost, updatePost }) => {
+const Main = ({ posts, removePost, updatePost }) => {
   const [edit, setEdit] = useState({
     id: null,
     value: ''
@@ -21,12 +21,12 @@ const Main = ({ todos, completeTodo, removePost, updatePost }) => {
     return <PostForm edit={edit} onSubmit={submitUpdate} />;
   }
 
-  return todos.map((post, index) => (
+  return posts.map((post, index) => (
     <div
-      className={post.isComplete ? 'todo-row complete' : 'todo-row'}
+      className={post.isComplete ? 'post-row complete' : 'post-row'}
       key={index}
     >
-      <div key={post.id} onClick={() => completeTodo(post.id)}>
+      <div key={post.id} className="post-style">
         {post.text}
       </div>
       <div className='icons'>
