@@ -1,9 +1,11 @@
+import React from 'react';
 import './App.css';
+import PostList from './components/PostList';
 
 function App() {
   return (
-    <div className="App">
-      <h2>Helloe</h2>
+    <div className='todo-app'>
+      <PostList />
     </div>
   );
 }
