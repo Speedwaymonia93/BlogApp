@@ -15,7 +15,7 @@ function PostList() {
     setPosts(newPosts);
   };
 
-  const updateTodo = (postId, newValue) => {
+  const updatePost = (postId, newValue) => {
     if (!newValue.text || /^\s*$/.test(newValue.text)) {
       return;
     }
@@ -35,7 +35,7 @@ function PostList() {
       <Main
         posts={posts}
         removePost={removePost}
-        updateTodo={updateTodo}
+        updatePost={updatePost}
       />
     </>
   );

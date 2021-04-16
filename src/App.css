@@ -86,13 +86,6 @@ h1 {
   padding: 16px 22px;
 }
 
-.todo-container {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  flex-wrap: wrap;
-}
-
 .post-row {
   display: flex;
   justify-content: space-between;
